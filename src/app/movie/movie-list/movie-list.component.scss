@@ -1,0 +1,10 @@
+.area-action {
+  margin: 10px 0;
+  text-align: right;
+}
+
+::ng-deep {
+  .p-button.p-button-icon-only.p-button-rounded {
+    margin-left: 10px;
+  }
+}

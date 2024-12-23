@@ -1,0 +1,57 @@
+<p-fieldset legend="Actor">
+  <div class="row area-action" *ngIf="showButtonCreate()">
+    <p-button label="Create" icon="pi pi-plus" (onClick)="goToCreate()" />
+  </div>
+  <p-panel>
+    <p-table [value]="actors" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>NO.</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-actor let-rowIndex="rowIndex">
+        <tr>
+          <td>{{ rowIndex + 1 }}</td>
+          <td>{{ actor.name }}</td>
+          <td>{{ actor.age }}</td>
+          <td>{{ actor.gender }}</td>
+          <td>
+            <p-button
+              *ngIf="showButtonEdit()"
+              icon="pi pi-pencil"
+              [rounded]="true"
+              (onClick)="editEvent(actor.id)"
+              [text]="true"
+              [raised]="true"
+              size="small"
+            />
+            <p-button
+              *ngIf="showButtonDetail()"
+              icon="pi pi-info-circle"
+              [rounded]="true"
+              (onClick)="detailEvent(actor.id)"
+              [text]="true"
+              [raised]="true"
+              size="small"
+            />
+            <p-button
+              *ngIf="showButtonDelete()"
+              icon="pi pi-trash"
+              [rounded]="true"
+              (onClick)="deleteEvent(actor, $event)"
+              [text]="true"
+              [raised]="true"
+              size="small"
+            />
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-panel>
+</p-fieldset>
+
+<p-confirmDialog />

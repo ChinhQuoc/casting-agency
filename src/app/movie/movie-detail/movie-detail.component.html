@@ -1,0 +1,20 @@
+<p-fieldset legend="Movie">
+  <div class="col-xs-12" *ngIf="movie">
+    <div class="item">
+      <span>Title: </span>
+      <span>{{ movie.title }}</span>
+    </div>
+    <div class="item">
+      <span>Release date: </span>
+      <span>{{ movie.releaseDate | date : "YYYY-MM-dd" }}</span>
+    </div>
+    <div class="item">
+      <span>Actors: </span>
+      @for (item of movie.actors; track item.name) {
+      <ul>
+        <li>{{ item.name }}</li>
+      </ul>
+      }
+    </div>
+  </div>
+</p-fieldset>

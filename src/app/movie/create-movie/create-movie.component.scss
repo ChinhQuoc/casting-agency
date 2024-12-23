@@ -1,0 +1,79 @@
+p-fieldset {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      label {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #555;
+      }
+
+      input[type="text"],
+      p-calendar,
+      p-multiSelect {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+
+        &:focus {
+          border-color: #007ad9;
+          outline: none;
+          box-shadow: 0 0 4px rgba(0, 122, 217, 0.2);
+        }
+      }
+
+      small {
+        color: #d32f2f;
+        font-size: 0.875rem;
+      }
+    }
+
+    p-button {
+      align-self: flex-end;
+
+      button {
+        background-color: #007ad9;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #005bb5;
+        }
+
+        &:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<p-fieldset legend="Actor">
+  <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" pInputText formControlName="name" />
+      <small id="name-invalid" *ngIf="invalidName(form)">
+        Please enter name.
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="name">Age</label>
+      <p-inputNumber formControlName="age" />
+      <small id="age-invalid" *ngIf="invalidAge(form)"> Age is invalid. </small>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <div class="flex align-items-center" *ngFor="let gender of genders">
+        <p-radioButton [value]="gender" formControlName="gender" />
+        <label for="gender" class="ml-2"> {{ gender }} </label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="movies">Movies</label>
+      <p-multiSelect
+        [options]="movies"
+        optionLabel="title"
+        formControlName="movies"
+        placeholder="Select Movies"
+      />
+    </div>
+    <p-button label="Submit" type="submit" [disabled]="disableSubmitButton()" />
+  </form>
+</p-fieldset>

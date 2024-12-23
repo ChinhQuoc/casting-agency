@@ -1,0 +1,60 @@
+<p-fieldset legend="Movie">
+  <div class="row area-action">
+    <p-button
+      *ngIf="showButtonCreate()"
+      label="Create"
+      icon="pi pi-plus"
+      (onClick)="goToCreate()"
+    />
+  </div>
+  <p-panel>
+    <p-table [value]="movies" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>NO.</th>
+          <th>Title</th>
+          <th>Release Date</th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-movie let-rowIndex="rowIndex">
+        <tr>
+          <td>{{ rowIndex + 1 }}</td>
+          <td>{{ movie.title }}</td>
+          <td>{{ movie.releaseDate | date : "YYYY-MM-dd" }}</td>
+          <td>
+            <p-button
+              *ngIf="showButtonEdit()"
+              icon="pi pi-pencil"
+              [rounded]="true"
+              (onClick)="editEvent(movie.id)"
+              [text]="true"
+              [raised]="true"
+              size="small"
+            />
+            <p-button
+              *ngIf="showButtonDetail()"
+              icon="pi pi-info-circle"
+              [rounded]="true"
+              (onClick)="detailEvent(movie.id)"
+              [text]="true"
+              [raised]="true"
+              size="small"
+            />
+            <p-button
+              *ngIf="showButtonDelete()"
+              icon="pi pi-trash"
+              [rounded]="true"
+              (onClick)="deleteEvent(movie, $event)"
+              [text]="true"
+              [raised]="true"
+              size="small"
+            />
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-panel>
+</p-fieldset>
+
+<p-confirmDialog />

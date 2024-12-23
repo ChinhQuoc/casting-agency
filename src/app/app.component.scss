@@ -1,0 +1,48 @@
+.header {
+  background: white;
+  span {
+    font-weight: bold;
+    font-size: 30px;
+    margin: 20px;
+  }
+}
+
+.row {
+  height: calc(100vh - 220px);
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.leftcolumn {
+  float: left;
+  width: 25%;
+}
+
+.rightcolumn {
+  float: left;
+  width: 75%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+:host {
+  ::ng-deep .left-menu {
+    width: 100%;
+    height: calc(100vh - 220px);
+    ul li a span {
+      padding: 20px 20px 0 20px;
+    }
+  }
+}
