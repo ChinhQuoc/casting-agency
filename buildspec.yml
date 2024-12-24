@@ -2,27 +2,22 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 20
     commands:
-      # Install dependencies using npm
+      - echo Installing Node.js 20...
       - echo Installing dependencies...
       - npm install
 
   pre_build:
     commands:
-      # You can add pre-build commands here if necessary
       - echo Pre-build phase...
 
   build:
     commands:
-      # Run the Angular build command
       - echo Building the Angular project...
       - npm run build -- --prod
 
   post_build:
     commands:
-      # You can add post-build commands here if necessary
       - echo Build completed...
 
 artifacts:
