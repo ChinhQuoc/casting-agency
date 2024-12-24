@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing Node.js 18...
+      - echo Installing Node.js 20...
       - echo Installing dependencies...
       - npm install -g @angular/cli # Install Angular CLI globally
       - npm install # Install project dependencies from package.json
@@ -14,9 +14,8 @@ phases:
   post_build:
     commands:
       - echo Build completed. Preparing artifacts...
-      - ls -la dist/web-app
 
 artifacts:
   files:
-    - web-app/ dist/web-app/** # Adjust this path if your Angular build output is in a different folder
+    - web-app/dist/web-app/** # Adjust this path if your Angular build output is in a different folder
   discard-paths: no # Retain folder structure in the artifact
