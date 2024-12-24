@@ -15,7 +15,8 @@ phases:
     commands:
       - echo Building the Angular project...
       - ls -R dist/
-      - npm run build
+      - npm run build --prod
+      - echo Listing files in dist directory...
 
   post_build:
     commands:
