@@ -14,8 +14,9 @@ phases:
   post_build:
     commands:
       - echo Build completed. Preparing artifacts...
+      - ls -la dist/web-app
 
 artifacts:
   files:
-    - dist/web-app/** # Adjust this path if your Angular build output is in a different folder
+    - web-app/ dist/web-app/** # Adjust this path if your Angular build output is in a different folder
   discard-paths: no # Retain folder structure in the artifact
