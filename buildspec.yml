@@ -24,7 +24,8 @@ phases:
 
 artifacts:
   files:
-    - dist/**/*
+    - "dist/web-app/**/*" # Correct artifact path for your app
+  base-directory: dist/web-app
 
 cache:
   paths:
