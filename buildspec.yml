@@ -17,5 +17,5 @@ phases:
 
 artifacts:
   files:
-    - dist/** # Adjust this path if your Angular build output is in a different folder
+    - dist/web-app # Adjust this path if your Angular build output is in a different folder
   discard-paths: no # Retain folder structure in the artifact
