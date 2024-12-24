@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18 # Specify the Node.js version
+    commands:
+      - echo Installing dependencies...
+      - npm install -g @angular/cli # Install Angular CLI globally
+      - npm install # Install project dependencies from package.json
+  build:
+    commands:
+      - echo Building the Angular application...
+      - ng build --configuration production # Build the app with the production configuration
+  post_build:
+    commands:
+      - echo Build completed. Preparing artifacts...
+
+artifacts:
+  files:
+    - dist/** # Adjust this path if your Angular build output is in a different folder
+  discard-paths: no # Retain folder structure in the artifact
