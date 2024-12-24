@@ -14,9 +14,8 @@ phases:
   build:
     commands:
       - echo Building the Angular project...
-      - npm run build -- --prod
-      - echo Listing files in dist directory...
-      - ls -R dist/web-app
+      - ls -R dist/
+      - npm run build
 
   post_build:
     commands:
@@ -24,8 +23,8 @@ phases:
 
 artifacts:
   files:
-    - "dist/web-app/**/*" # Correct artifact path for your app
-  base-directory: dist/web-app
+    - "web-app/**/*" # Correct artifact path for your app
+  base-directory: dist
 
 cache:
   paths:
