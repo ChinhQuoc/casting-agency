@@ -2,9 +2,8 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 18 # Specify the Node.js version
     commands:
+      - echo Installing Node.js 18...
       - echo Installing dependencies...
       - npm install -g @angular/cli # Install Angular CLI globally
       - npm install # Install project dependencies from package.json
