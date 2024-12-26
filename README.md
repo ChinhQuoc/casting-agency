@@ -1,91 +1,108 @@
 # Webapp - Casting Agency
 
-The Casting Agency models a company that is responsible for creating movies and managing and assigning actors to those movies. Users on the system will have 1 of 2 rights (Casting Assistant, Casting Director) to use the functions corresponding to each right. After the user successfully registers an account on the application, send a request to the admin to grant permission (because the application does not have the function of granting permission yet)
+**Casting Agency** is an application that simulates a company responsible for creating movies, managing actors, and assigning them to those movies. Users in the system will have one of two roles: **Casting Assistant** or **Casting Director**, with each role having corresponding permissions. After successfully registering an account, users need to send a request to the admin to be granted permissions (as the application does not yet support automated permission assignment).
 
-The Casting Agency app that will be used for this project consists of a simple API with some functions:
+The Casting Agency application provides the following main features:
 
-1. Movie
+---
 
-- View list movie:
+## **Features**
 
-  - Casting Assistant, Casting Director can access the function
-  - List all movies in system
+### **Movie Management**
 
-- View detail movie:
+#### **View Movie List**
 
-  - Casting Assistant, Casting Director can access the function
-  - Display all information related the particular movie, which actors enroll the movie
+- **Access Rights**: Casting Assistant, Casting Director
+- Displays a list of all movies in the system.
 
-- Edit movie:
+#### **View Movie Details**
 
-  - only Casting Director can access the function
-  - The user can update movie's information, by input information and click <i>Submit</i> button
+- **Access Rights**: Casting Assistant, Casting Director
+- Displays detailed information about a specific movie, including the list of actors participating.
 
-- Delete movie:
-  - only Casting Director can access the function
-  - Click on <i>trash</i> icon, show popup confirmation. Click <i>Yes</i> to delete or <i>No<i> to cancel
+#### **Edit Movie**
 
-2. Actor
+- **Access Rights**: Casting Director only
+- Allows users to update movie details by entering new information and clicking the **Submit** button.
 
-- View list actor:
+#### **Delete Movie**
 
-  - Casting Assistant, Casting Director can access the function
-  - List all actors in system
+- **Access Rights**: Casting Director only
+- Deletes a movie.
+  - Click the trash icon to display a confirmation popup.
+  - Click **Yes** to confirm deletion or **No** to cancel.
 
-- View detail actor:
+---
 
-  - Casting Assistant, Casting Director can access the function
-  - Display all information related the particular actor, which actors enroll the actor
+### **Actor Management**
 
-- Edit actor:
+#### **View Actor List**
 
-  - only Casting Director can access the function
-  - The user can update actor's information, by input information and click <i>Submit</i> button
+- **Access Rights**: Casting Assistant, Casting Director
+- Displays a list of all actors in the system.
 
-- Delete actor:
-  - only Casting Director can access the function
-  - Click on <i>trash</i> icon, show popup confirmation. Click <i>Yes</i> to delete or <i>No<i> to cancel
+#### **View Actor Details**
 
-3. Permission denied page
+- **Access Rights**: Casting Assistant, Casting Director
+- Displays detailed information about a specific actor, including the list of movies they participate in.
 
-- If user redirect to page that user doesn't have permission, the page is rendered
+#### **Edit Actor**
 
-4. Logout
+- **Access Rights**: Casting Director only
+- Allows users to update actor details by entering new information and clicking the **Submit** button.
 
-## Running Webapp by URL
+#### **Delete Actor**
 
-1. Redirect to url:
+- **Access Rights**: Casting Director only
+- Deletes an actor.
+  - Click the trash icon to display a confirmation popup.
+  - Click **Yes** to confirm deletion or **No** to cancel.
 
-2. Login with 1 of 2 accounts:
+---
 
-- Casting Assistant:
-  account: / pasword:
+### **Permission Denied Page**
 
-- Casting Director:
-  account: / password:
+- If a user attempts to access a page they do not have permission for, the system redirects them to a **Permission Denied** page.
 
-## Running Webapp on local
+### **Logout**
 
-### Setting up the Webapp on local
+- Users can log out of the application at any time.
 
-1. Install Dependencies
+---
 
-- Install Nodejs v20.0
+## **Running the Webapp via URL**
 
-- Install Angular v17.0
+1. Navigate to the provided URL.
+2. Log in using one of the following accounts:
+   - **Casting Assistant**
+     - **Username**: `[Provide username here]`
+     - **Password**: `[Provide password here]`
+   - **Casting Director**
+     - **Username**: `[Provide username here]`
+     - **Password**: `[Provide password here]`
 
-- Open terminal and run command:
+---
 
-```bash
-npm install
-```
+## **Running the Webapp Locally**
 
-2. Run the Webapp
+### **Setting up the Webapp**
 
-Open the terminal and run command:
+1. **Install Dependencies**
 
-```bash
-npm start
-```
+   - Install **Node.js v20.0**.
+   - Install **Angular v17.0**.
+   - Open a terminal and run the following command:
+     ```bash
+     npm install
+     ```
 
-3. Login
+2. **Run the Webapp**
+
+   - Open a terminal and run the following command:
+     ```bash
+     npm start
+     ```
+   - Open the provided local URL in your browser to access the application.
+
+3. **Log in**
+   - Use one of the accounts mentioned in the **Running the Webapp via URL** section to log in.
