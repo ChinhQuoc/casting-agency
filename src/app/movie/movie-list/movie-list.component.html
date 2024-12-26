@@ -8,7 +8,12 @@
     />
   </div>
   <p-panel>
-    <p-table [value]="movies" [tableStyle]="{ 'min-width': '50rem' }">
+    <p-table
+      [value]="movies"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      scrollHeight="450px"
+      [scrollable]="true"
+    >
       <ng-template pTemplate="header">
         <tr>
           <th>NO.</th>

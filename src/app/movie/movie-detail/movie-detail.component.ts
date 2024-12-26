@@ -11,6 +11,7 @@ import { NotificationService } from '../../services/notification.service';
   selector: 'app-detail-movie',
   standalone: true,
   templateUrl: './movie-detail.component.html',
+  styleUrls: ['./movie-detail.component.scss'],
   imports: [CommonModule, FieldsetModule],
   providers: [MovieService, NotificationService],
 })

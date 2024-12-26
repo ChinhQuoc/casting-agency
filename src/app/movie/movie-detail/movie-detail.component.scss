@@ -1,0 +1,46 @@
+:host {
+  display: block;
+  margin: 2rem;
+
+  ::ng-deep .p-fieldset {
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+
+    .p-fieldset-legend {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #495057;
+      padding: 0.5rem 1rem;
+      border-radius: 8px 8px 0 0;
+      background-color: #e9ecef;
+    }
+
+    .col-xs-12 {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .item {
+        display: flex;
+        align-items: baseline;
+
+        span:first-child {
+          font-weight: bold;
+          margin-right: 0.5rem;
+          color: #6c757d;
+        }
+
+        ul {
+          margin: 0.5rem 0;
+          padding-left: 1.5rem;
+
+          li {
+            color: #212529;
+          }
+        }
+      }
+    }
+  }
+}

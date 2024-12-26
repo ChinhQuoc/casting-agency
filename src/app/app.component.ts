@@ -6,10 +6,8 @@ import { CommonModule } from '@angular/common';
 import { ToastModule } from 'primeng/toast';
 import { AuthGuardService } from './authentication/auth-guard.service';
 import { AuthenticationService } from './authentication/authentication.service';
-import { catchError, of, switchMap, tap } from 'rxjs';
-import { Router } from '@angular/router';
-import { AuthService } from './services/auth.service';
-import { User } from './models/user';
+import { PermissionGuard } from './authentication/permisson-guard.service';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +20,7 @@ import { User } from './models/user';
     ConfirmationService,
     AuthGuardService,
     AuthenticationService,
+    PermissionGuard,
     AuthService,
   ],
 })
@@ -30,13 +29,7 @@ export class AppComponent implements OnInit {
   items: MenuItem[] = [];
   token: string | null;
 
-  constructor(
-    private authenticationService: AuthenticationService,
-    private authService: AuthService,
-    private router: Router
-  ) {
-    this.initializeApp();
-  }
+  constructor(private authenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
     if (window.location.hash.includes('access_token')) {
@@ -55,35 +48,7 @@ export class AppComponent implements OnInit {
     ];
   }
 
-  initializeApp() {}
-
   onLogout() {
     this.authenticationService.logout();
-    // this.authService
-    //   .requestLogout()
-    //   .pipe(
-    //     catchError((error) => {
-    //       console.log('Logout API failed:', error);
-    //       return of(null);
-    //     })
-    //   )
-    //   .subscribe(() => {
-    //     this.authenticationService.login();
-    //   });
-    // of(this.token)
-    //   .pipe(
-    //     tap((token) => {
-    //       if (!!token) {
-    //         this.authService.check_token_is_revoked();
-    //       }
-    //     }),
-    //     switchMap(() => {
-    //       return this.authService.requestLogout();
-    //     })
-    //   )
-    //   .subscribe(() => {
-    //     this.authenticationService.logout();
-    //     this.router.navigate(['/']);
-    //   });
   }
 }

@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { AuthGuardService } from './authentication/auth-guard.service';
+import { PermissionGuard } from './authentication/permisson-guard.service';
 
 export const routes: Routes = [
   {
@@ -16,7 +17,10 @@ export const routes: Routes = [
           import('./movie/movie-list/movie-list.component').then(
             (m) => m.MovieListComponent
           ),
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuardService, PermissionGuard],
+        data: {
+          role: 'get:movies',
+        },
       },
       {
         path: 'create',
@@ -24,7 +28,10 @@ export const routes: Routes = [
           import('./movie/create-movie/create-movie.component').then(
             (m) => m.CreateMovieComponent
           ),
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuardService, PermissionGuard],
+        data: {
+          role: 'post:movie',
+        },
       },
       {
         path: ':id',
@@ -32,7 +39,10 @@ export const routes: Routes = [
           import('./movie/movie-detail/movie-detail.component').then(
             (m) => m.MovieDetailComponent
           ),
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuardService, PermissionGuard],
+        data: {
+          role: 'get:movie',
+        },
       },
       {
         path: 'edit/:id',
@@ -40,7 +50,10 @@ export const routes: Routes = [
           import('./movie/create-movie/create-movie.component').then(
             (m) => m.CreateMovieComponent
           ),
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuardService, PermissionGuard],
+        data: {
+          role: 'patch:movie',
+        },
       },
     ],
   },
@@ -53,7 +66,10 @@ export const routes: Routes = [
           import('./actor/actor-list/actor-list.component').then(
             (m) => m.ActorListComponent
           ),
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuardService, PermissionGuard],
+        data: {
+          role: 'get:actors',
+        },
       },
       {
         path: 'create',
@@ -61,7 +77,10 @@ export const routes: Routes = [
           import('./actor/create-actor/create-actor.component').then(
             (m) => m.CreateActorComponent
           ),
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuardService, PermissionGuard],
+        data: {
+          role: 'post:actor',
+        },
       },
       {
         path: ':id',
@@ -69,7 +88,10 @@ export const routes: Routes = [
           import('./actor/actor-detail/actor-detail.component').then(
             (m) => m.ActorDetailComponent
           ),
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuardService, PermissionGuard],
+        data: {
+          role: 'get:actor',
+        },
       },
       {
         path: 'edit/:id',
@@ -77,7 +99,10 @@ export const routes: Routes = [
           import('./actor/create-actor/create-actor.component').then(
             (m) => m.CreateActorComponent
           ),
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuardService, PermissionGuard],
+        data: {
+          role: 'patch:actor',
+        },
       },
     ],
   },

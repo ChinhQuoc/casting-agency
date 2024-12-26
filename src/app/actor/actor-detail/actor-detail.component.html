@@ -1,24 +1,22 @@
 <p-fieldset legend="Actor">
   <div class="col-xs-12" *ngIf="actor">
     <div class="item">
-      <span>Name: </span>
+      <span>Name:</span>
       <span>{{ actor.name }}</span>
     </div>
     <div class="item">
-      <span>Age: </span>
+      <span>Age:</span>
       <span>{{ actor.age }}</span>
     </div>
     <div class="item">
-      <span>Gender: </span>
+      <span>Gender:</span>
       <span>{{ actor.gender }}</span>
     </div>
     <div class="item">
-      <span>Actors: </span>
-      @for (item of actor.movies; track item.title) {
-      <ul>
-        <li>{{ item.title }}</li>
+      <span>Actors:</span>
+      <ul *ngIf="actor.movies?.length">
+        <li *ngFor="let item of actor.movies">{{ item.title }}</li>
       </ul>
-      }
     </div>
   </div>
 </p-fieldset>

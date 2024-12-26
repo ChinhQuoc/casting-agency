@@ -11,6 +11,7 @@ import { Subject, takeUntil } from 'rxjs';
   selector: 'app-detail-actor',
   standalone: true,
   templateUrl: './actor-detail.component.html',
+  styleUrls: ['./actor-detail.component.scss'],
   imports: [CommonModule, FieldsetModule],
   providers: [ActorService, NotificationService],
 })

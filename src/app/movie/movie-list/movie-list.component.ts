@@ -67,8 +67,7 @@ export class MovieListComponent implements OnInit, OnDestroy {
         (movies: Movie[]) => {
           this.movies = movies;
         },
-        (error) => {
-          console.log('error: ', error);
+        (_) => {
           this.notificationService.showMessage(
             'Error load movie list',
             'Error'
@@ -99,7 +98,7 @@ export class MovieListComponent implements OnInit, OnDestroy {
     const id = movie.id;
     this.confirmationService.confirm({
       target: event.target as EventTarget,
-      message: `Are you sure that you want to delete movie ${movie.title}}?`,
+      message: `Are you sure that you want to delete movie ${movie.title}?`,
       header: 'Confirmation',
       icon: 'pi pi-exclamation-triangle',
       acceptIcon: 'none',
