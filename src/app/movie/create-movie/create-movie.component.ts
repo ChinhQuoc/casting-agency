@@ -87,13 +87,11 @@ export class CreateMovieComponent implements OnInit, OnDestroy {
   loadDataForUpdating(id: number) {
     this.movieService.getMovieById(id).subscribe(
       (movie) => {
-        this.form = new FormGroup({
-          title: new FormControl(movie.title, Validators.required),
-          releaseDate: new FormControl(
-            new Date(movie.releaseDate),
-            Validators.required
-          ),
-          actors: new FormControl(movie.actors),
+        const releaseDate = new Date(movie.releaseDate);
+        this.form.patchValue({
+          title: movie.title,
+          releaseDate: releaseDate,
+          actors: movie.actors,
         });
       },
       () => {

@@ -9,7 +9,7 @@
     </div>
     <div class="form-group">
       <label for="releaseDate">Release date</label>
-      <p-calendar formControlName="releaseDate" [minDate]="minDate" />
+      <p-calendar formControlName="releaseDate" [readonlyInput]="true" />
       <small id="title-invalid" *ngIf="invalidDate(form)">
         Please enter release date.
       </small>
