@@ -3,11 +3,15 @@ const path = require("path");
 const app = express();
 
 // Serve static files from the Angular dist directory
-app.use(express.static(path.join(__dirname, "dist/casting-agency-webapp")));
+app.use(
+  express.static(path.join(__dirname, "dist/casting-agency-webapp/browser"))
+);
 
 // Redirect all requests to index.html
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist/casting-agency-webapp/index.html"));
+  res.sendFile(
+    path.join(__dirname, "dist/casting-agency-webapp/browser/index.html")
+  );
 });
 
 // Start the server
