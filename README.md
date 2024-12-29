@@ -6,6 +6,10 @@ The Casting Agency application provides the following main features:
 
 ---
 
+## **Project URL**
+
+https://casting-agency-webapp-30c022db435b.herokuapp.com/
+
 ## **Features**
 
 ### **Movie Management**

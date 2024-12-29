@@ -94,7 +94,7 @@ export class ActorListComponent implements OnInit, OnDestroy {
     const id = actor.id;
     this.confirmationService.confirm({
       target: event.target as EventTarget,
-      message: `Are you sure that you want to delete actor ${actor.name}}?`,
+      message: `Are you sure that you want to delete actor ${actor.name}?`,
       header: 'Confirmation',
       icon: 'pi pi-exclamation-triangle',
       acceptIcon: 'none',
