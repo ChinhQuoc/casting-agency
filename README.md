@@ -1,14 +1,14 @@
 # Webapp - Casting Agency
 
+## **Project URL**
+
+https://casting-agency-webapp-30c022db435b.herokuapp.com/
+
 **Casting Agency** is an application that simulates a company responsible for creating movies, managing actors, and assigning them to those movies. Users in the system will have one of two roles: **Casting Assistant** or **Casting Director**, with each role having corresponding permissions. After successfully registering an account, users need to send a request to the admin to be granted permissions (as the application does not yet support automated permission assignment).
 
 The Casting Agency application provides the following main features:
 
 ---
-
-## **Project URL**
-
-https://casting-agency-webapp-30c022db435b.herokuapp.com/
 
 ## **Features**
 
