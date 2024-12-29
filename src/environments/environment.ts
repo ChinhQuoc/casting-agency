@@ -1,7 +1,6 @@
 export const environment = {
   production: false,
-  // apiServerUrl: 'https://casting-agency-api-65072a915e1a.herokuapp.com/',
-  apiServerUrl: 'http://127.0.0.1:5000',
+  apiServerUrl: 'https://casting-agency-api-v2-1c8ccb2115d3.herokuapp.com',
   auth0: {
     url: 'dev-5l37br2fze6hxdk6.us',
     audience: 'casting_agency',
