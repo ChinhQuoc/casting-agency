@@ -6,7 +6,8 @@ export const environment = {
     url: 'dev-5l37br2fze6hxdk6.us',
     audience: 'casting_agency',
     clientId: 'scC8RRRr6hJDFWZzPH9IbAAUNkeUK4Ex',
-    callbackURL: 'http://localhost:4200/callback',
+    callbackURL:
+      'https://casting-agency-webapp-30c022db435b.herokuapp.com/callback',
     domain: 'dev-5l37br2fze6hxdk6.us.auth0.com',
   },
 };
